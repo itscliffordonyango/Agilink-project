@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AgriLink — Market & Profit Estimator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="hero-overlay">
+        <h1 class="title">AgriLink</h1>
+        <p class="tag">Climate-smart, data-driven market platform for farmers</p>
+        <button id="cta-get-started" class="btn primary">Get Started</button>
+      </div>
+      <img src="assets/hero-leaves.jpg" alt="" class="hero-img" />
+    </header>
+
+    <nav class="nav">
+      <button id="nav-dashboard" class="nav-btn active">Dashboard</button>
+      <button id="nav-market" class="nav-btn">Market</button>
+      <button id="nav-estimator" class="nav-btn">Profit Estimator</button>
+      <button id="nav-listings" class="nav-btn">My Listings</button>
+      <button id="nav-settings" class="nav-btn">Settings</button>
+    </nav>
+
+    <section id="content" class="content" role="main" aria-live="polite">
+      <!-- Content injected by script.js -->
+    </section>
+
+    <footer class="footer">
+      <small>AgriLink • Demo — No real transactions</small>
+    </footer>
+  </main>
+
+  <template id="dashboard-template">
+    <section class="dashboard">
+      <div class="card balance">
+        <h2>Your expected value</h2>
+        <p id="expected-value" class="big">KES 0</p>
+      </div>
+      <div class="card market-preview">
+        <h3>Market Prices</h3>
+        <ul id="market-list" class="list"></ul>
+        <div class="row">
+          <button id="refresh-market" class="btn">Refresh</button>
+          <button id="open-market" class="btn outline">Open Market</button>
+        </div>
+      </div>
+      <div class="card alerts">
+        <h3>Climate Alerts</h3>
+        <div id="alerts-box">No alerts</div>
+      </div>
+    </section>
+  </template>
+
+  <template id="market-template">
+    <section class="market">
+      <h2>Market Prices</h2>
+      <div class="card">
+        <label for="region">Region</label>
+        <select id="region">
+          <option value="makueni">Makueni</option>
+          <option value="nairobi">Nairobi</option>
+        </select>
+      </div>
+      <ul id="market-full" class="list"></ul>
+    </section>
+  </template>
+
+  <template id="estimator-template">
+    <section class="estimator">
+      <h2>Profit Estimator</h2>
+      <div class="card">
+        <label>Crop</label>
+        <input id="crop" placeholder="Maize" />
+        <label>Yield (kg)</label>
+        <input id="yield" type="number" value="1000" />
+        <label>Expected Price (KES/kg)</label>
+        <input id="price" type="number" value="30" />
+        <label>Loss %</label>
+        <input id="loss" type="number" value="10" />
+        <label>Storage Cost (KES)</label>
+        <input id="storage" type="number" value="500" />
+        <label>Transport Cost (KES)</label>
+        <input id="transport" type="number" value="1000" />
+        <div class="row">
+          <button id="calc-estimate" class="btn primary">Estimate</button>
+          <button id="post-estimate" class="btn outline">Compare with Server</button>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Result</h3>
+        <div id="est-result">No estimate yet</div>
+      </div>
+    </section>
+  </template>
+
+  <template id="listings-template">
+    <section class="listings">
+      <h2>My Listings</h2>
+      <div class="card">
+        <label>Crop</label>
+        <input id="list-crop" placeholder="Maize" />
+        <label>Quantity (kg)</label>
+        <input id="list-qty" type="number" value="100" />
+        <label>Min price (KES/kg)</label>
+        <input id="list-price" type="number" value="30" />
+        <div class="row">
+          <button id="create-listing" class="btn primary">Create Listing (Offline-safe)</button>
+          <button id="sync-listings" class="btn">Sync Now</button>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Queued Listings</h3>
+        <ul id="queued-list" class="list"></ul>
+      </div>
+    </section>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>

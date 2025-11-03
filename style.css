@@ -1,0 +1,35 @@
+
+:root{
+  --primary:#2F7A4F;
+  --light:#BFEAD0;
+  --accent:#1E6B3A;
+  --card:#F4FBF6;
+  --bg:#ffffff;
+  --radius:24px;
+  --radius-sm:12px;
+  --spacing:16px;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#0b2a17;-webkit-font-smoothing:antialiased}
+.app{max-width:420px;margin:24px auto;border-radius:20px;overflow:hidden;box-shadow:0 8px 30px rgba(30,43,18,0.08)}
+.hero{position:relative;height:220px;display:block}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(0.9) saturate(1.1)}
+.hero-overlay{position:relative;padding:28px;background:linear-gradient(180deg, rgba(47,122,79,0.45), rgba(255,255,255,0.0));height:100%;display:flex;flex-direction:column;justify-content:flex-end}
+.title{color:white;font-size:28px;margin:0 0 6px 0;font-weight:700}
+.tag{color:rgba(255,255,255,0.9);margin:0 0 12px 0}
+.btn{padding:10px 16px;border-radius:999px;border:none;background:transparent;cursor:pointer;font-weight:600}
+.btn.primary{background:var(--primary);color:white}
+.btn.outline{border:1px solid rgba(11,42,23,0.08);background:transparent;color:var(--primary)}
+.nav{display:flex;gap:6px;padding:12px;background:linear-gradient(180deg, rgba(244,251,246,0.9), #fff)}
+.nav-btn{flex:1;padding:10px;border-radius:12px;border:none;background:transparent;cursor:pointer}
+.nav-btn.active{background:var(--card);box-shadow:0 6px 18px rgba(30,43,18,0.06)}
+.content{padding:16px}
+.card{background:var(--card);padding:14px;border-radius:var(--radius-sm);margin-bottom:12px;box-shadow:0 6px 20px rgba(30,43,18,0.03)}
+.big{font-size:22px;font-weight:700;color:var(--accent)}
+.list{list-style:none;padding:0;margin:0}
+.list li{padding:10px;border-radius:12px;margin-bottom:8px;background:white;display:flex;justify-content:space-between;align-items:center}
+.row{display:flex;gap:10px}
+.footer{padding:12px;text-align:center;color:#567a61;background:linear-gradient(180deg, rgba(244,251,246,0.9), #fff)}
+input,select{width:100%;padding:10px;border-radius:12px;border:1px solid rgba(11,42,23,0.06);margin:6px 0;background:transparent}
+@media (max-width:480px){.app{margin:12px}}
